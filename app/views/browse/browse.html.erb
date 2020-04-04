@@ -1,0 +1,20 @@
+<div class="container">
+  <ul id="slides">
+    <% @users.each_with_index do |user,i|%>
+    <li class="slide <%= 'showing' if i==0 %>" data-id="<%= user.id %>">
+      <div class="image-bg" style="background-image: url('<%= url_for user.images.first %>')">
+        <ul class="user-details">
+          <li><%= user.firstname %> <%= user.lastname %></li>
+          <li>Studies</li>
+          <li>Location</li>
+        </ul>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+</div>
+
+<div id="slide-controls">
+  <button class="controls" id="decline"> No </button>
+  <button class="controls" id="approve"> Yes </button>
+</div>

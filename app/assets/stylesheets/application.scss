@@ -1,0 +1,83 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+$black: #051933;
+$primary: #c403be;
+$link: #19a3a9;
+//$body-background-color: #153d7a;
+$body-background-color: $black;
+
+//@import url('https://fonts.googleapis.com/css?family=Major+Mono+Display&effect=anaglyph|emboss&family=lato&display=swap');
+@import "bulma";
+
+.brand-title {
+  font-family: 'Major Mono Display';
+  font-size: 40px;
+  margin-left: 20px;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .bigger {
+    font-size: 55px;
+    margin-left: 50px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .brand-title {
+    .bigger {
+      font-size: 78px;
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .brand-title {
+    .bigger {
+      font-size: 105px;
+    }
+  }
+}
+
+.is-vcentered {
+  height: 70vh;
+  padding: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  border: 8px ridge $primary;
+  padding: 30px;
+  font-weight: medium;
+  //border-radius: 20px;
+  color:$link;
+  .title {
+    font-family: 'Major Mono Display';
+    display: table;
+    margin: auto;
+    margin-bottom: 25px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid black;
+    width: 100%;
+
+  }
+}
