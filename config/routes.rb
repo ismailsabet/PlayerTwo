@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   post "/approve/:id" => "browse#approve", as: :approve_user
   post "/decline/:id" => "browse#decline", as: :decline_user
 
+  get 'users/:id' => 'users#show'
 end
