@@ -1,8 +1,19 @@
 $(function(){
 
   var $activeSlide = $('#slides .slide:first-child');
-
   $activeSlide.addClass("showing");
+
+  $(".match").on("click", function() {
+    var user_id = $(this).data("id");
+    console.log(user_id);
+
+    $.ajax({
+      url: "/get/conversation/" + user_id,
+      method: "post",
+      dataType: "ajax"
+    });
+
+  });
 
   $("#decline").on("click", function() {
     goToSlide('decline');
