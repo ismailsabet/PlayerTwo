@@ -1,20 +1,52 @@
 <div class="container">
-  <ul id="slides">
-    <% @users.each_with_index do |user,i|%>
-    <li class="slide <%= 'showing' if i==0 %>" data-id="<%= user.id %>">
-      <div class="image-bg" style="background-image: url('<%= url_for user.images.first %>')">
-        <ul class="user-details">
-          <li><%= user.firstname %> <%= user.lastname %></li>
-          <li>Studies</li>
-          <li>Location</li>
-        </ul>
-      </div>
-    </li>
-    <% end %>
-  </ul>
-</div>
+  <div class="columns is-centered">
+    <div class="column is-one-third">
+      <ul id="slides">
+        <% @users.each_with_index do |user,i|%>
+          <li class="slide <%= 'showing' if i==0 %>" data-id="<%= user.id %>">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <% if user.images.attached? %>
+                    <%= image_tag url_for(user.images.first) %>
+                  <% else %>
+                    <%= image_tag("default_avatar.jpeg")%>
+                  <% end %>
+                </figure>
+              </div>
+              <div class="card-content">
+                <p class="title is-4"><%= user.firstname %>
+                  <%= user.lastname %></p>
+                <p class="subtitle is-6">
+                  nick
+                </p>
 
-<div id="slide-controls">
-  <button class="controls" id="decline"> No </button>
-  <button class="controls" id="approve"> Yes </button>
+                <div class="content">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+                  <ul class="user-details">
+                    <li>Studies:
+                    </li>
+                    <li>Location:
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+              <footer class="card-footer">
+                <button class="card-footer-item button is-danger is-light" id="decline">
+                  nope
+                </button>
+                <button class="card-footer-item button is-info is-light">
+                  expand profile
+                </button>
+                <button class="card-footer-item button is-success is-light" id="approve">
+                  yes
+                </button>
+              </footer>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </div>

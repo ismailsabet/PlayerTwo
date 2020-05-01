@@ -9,35 +9,13 @@
 
 #slides {
   position: relative;
-  background-color: black;
   list-style-type: none;
-  margin-top: 20px;
-  width: 100%;
-}
-
-#slide-controls{
-  position: absolute;
-  left: 50%;
-  top: 400px;
-  width: 100px;
-  text-align: center;
+  //margin-top: 20px;
+  //width: 100%;
 }
 
 .slide {
   position: absolute;
   opacity: 0;
   z-index: 1;
-}
-
-.image-bg {
-  width: 250px;
-  padding: 20px;
-  margin: 20px auto;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.user-details {
-  margin-top: 100px;
-  color: white;
 }
