@@ -1,0 +1,33 @@
+<section id="body" class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-one-quarter">
+                <div class="box">
+                    <div class="content has-text-centered">
+                        <% if @user.images.attached? %>
+                        <% @user.images.each do |image| %>
+                        <%= image_tag(image, size: '250') %>
+                        <% end %>
+                        <% end %>
+                        <h1 class="is-size-3"><%= @user.firstname %> <%= @user.lastname %></h1>
+                        <p class="is-size-5">@<%= @user.username %></p>
+                        <p class="is-size-6">Status: Offline <br>
+                            Age: 19 <br>
+                            Chemistry Rating: 83</p>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-three-quarter">
+                <div class="box">
+                    <div class="content has-text-centered">
+                        <h1 class="is-size-2">Bio</h1>
+                        <p class="is-size-5">Biography</p>
+                        <h1 class="is-size-2">Library</h1>
+                        <p class="is-size-5">3 Most Played Games</p>
+                        <p class="is-size-5">Most Recently Played</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
