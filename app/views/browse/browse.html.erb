@@ -6,13 +6,7 @@
           <li class="slide <%= 'showing' if i==0 %>" data-id="<%= user.id %>">
             <div class="card">
               <div class="card-image">
-                <figure class="image is-4by3">
-                  <% if user.images.attached? %>
-                    <%= image_tag url_for(user.images.first) %>
-                  <% else %>
-                    <%= image_tag("default_avatar.jpeg")%>
-                  <% end %>
-                </figure>
+                  <div class="image-bg-bigger" style="background-image: url(<%= user.user_avatar user%>);">
               </div>
               <div class="card-content">
                 <p class="title is-4"><%= user.firstname %>
@@ -36,9 +30,9 @@
                 <button class="card-footer-item button is-danger is-light" id="decline">
                   nope
                 </button>
-                <button class="card-footer-item button is-info is-light">
-                  expand profile
-                </button>
+                <%= link_to "expand profile", show_user_path(id: user.id), class: "card-footer-item button is-info is-light" %>
+
+
                 <button class="card-footer-item button is-success is-light" id="approve">
                   yes
                 </button>

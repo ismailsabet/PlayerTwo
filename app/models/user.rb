@@ -15,4 +15,12 @@ class User < ApplicationRecord
     User.where(id: matched_ids)
   end
 
+  def user_avatar user
+    if user.images.attached?
+      url_for(user.images.first)
+    else
+      # Assuming you have a default.jpg in your assets folder
+      'assets/default_avatar.jpeg'
+    end
+  end
 end

@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>PlayerTwo</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Major+Mono+Display&effect=anaglyph|emboss&family=lato&display=swap', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>PlayerTwo</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-  <body>
-    <%= render 'shared/header' %>
+  <%= favicon_link_tag asset_path('favicon.png') %>
 
-    <%= yield %>
-  </body>
+  <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Major+Mono+Display&effect=anaglyph|emboss&family=lato&display=swap', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <%= render 'shared/header' %>
+
+  <%= yield %>
+</body>
+
 </html>
