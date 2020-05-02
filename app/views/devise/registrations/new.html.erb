@@ -2,6 +2,7 @@
   <div class="container">
     <div class="columns is-centered is-vcentered">
       <div class="box is-one-quarter has-text-centered has-text-link">
+        <div class="form">
         <h2 class="is-size-2 title font-effect-anaglyph">sign up</h2>
 
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -30,6 +31,7 @@
       <br>
 
       <%= render "devise/shared/links" %>
+      </div>
     </div>
   </div>
 </div>

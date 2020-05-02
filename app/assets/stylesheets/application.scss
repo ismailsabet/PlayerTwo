@@ -65,11 +65,19 @@ $body-background-color: $black;
 }
 
 .box {
-  border: 8px ridge $primary;
-  padding: 30px;
-  font-weight: medium;
-  //border-radius: 20px;
-  color:$link;
+  //border: 8px ridge $primary;
+  font-weight: bold;
+  border-radius: 30px;
+  //color:$link;
+  .form {
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    //border-radius: 50px;
+    //border: 8px ridge $primary;
+  }
+
   .title {
     font-family: 'Major Mono Display';
     display: table;
@@ -80,4 +88,8 @@ $body-background-color: $black;
     width: 100%;
 
   }
+}
+
+.no-pad {
+  padding: 0px;
 }

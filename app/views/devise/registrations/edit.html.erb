@@ -1,7 +1,8 @@
 <section class="section">
   <div class="container">
     <div class="columns is-centered is-vcentered">
-      <div class="box is-one-quarter has-text-centered has-text-link">
+      <div class="box is-one-quarter has-text-centered">
+        <div class="form">
         <h2 class="is-size-2 title font-effect-anaglyph">Edit
           <%= resource_name.to_s.humanize %></h2>
 
@@ -51,7 +52,7 @@
         </div>
 
         <br>
-        
+
         <div class="actions">
           <%= f.submit "Update" %>
         </div>
@@ -62,6 +63,7 @@
       <br>
 
       <%= link_to "Back", :back %>
+      </div>
     </div>
   </div>
 </div>

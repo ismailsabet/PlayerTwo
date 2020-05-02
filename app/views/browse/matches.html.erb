@@ -1,10 +1,84 @@
 <div class="container">
-  <ul>
-    <% @matches.each do |match|%>
-    <li class="match" data-id="<%= match.id %>">
-      <%= match.firstname %>
-      <%= match.lastname %>
-    </li>
+
+  <div class="tile is-ancestor" style="flex-wrap: wrap; padding-top: 30px;">
+    <div class="tile is-3 is-parent">
+      <article class="tile is-child no-pad">
+        <%= link_to '#' do %>
+        <div class="image-bg" style="background-image: url(assets/karen.jpg);">
+          <div class="hero-text">
+            <p class="title">Karen</p>
+            <p class="subtitle">I'm like so fit and so hot</p>
+          </div>
+
+        </div>
+      <% end %>
+
+    </article>
+  </div>
+
+  <div class="tile is-3 is-parent">
+    <article class="tile is-child no-pad">
+      <%= link_to '#' do %>
+      <div class="image-bg" style="background-image: url(assets/Janet);">
+        <div class="hero-text">
+          <p class="title">Janet</p>
+          <p class="subtitle">Let's play some tictactoe</p>
+        </div>
+      </div>
     <% end %>
-  </ul>
+    </article>
+  </div>
+
+  <div class="tile is-3 is-parent">
+    <article class="tile is-child no-pad">
+      <%= link_to '#' do %>
+      <div class="image-bg" style="background-image: url(assets/Jacqlyn);">
+        <div class="hero-text">
+          <p class="title">Jacqlyn</p>
+          <p class="subtitle">Just looking for a friend</p>
+        </div>
+      </div>
+      <% end %>
+    </article>
+  </div>
+
+  <div class="tile is-3 is-parent">
+    <article class="tile is-child no-pad">
+      <%= link_to '#' do %>
+      <div class="image-bg" style="background-image: url(assets/mario.jpg);">
+        <div class="hero-text">
+          <p class="title">Mario</p>
+          <p class="subtitle">Jump into pipes with me</p>
+        </div>
+      </div>
+      <% end %>
+    </article>
+  </div>
+
+  <div class="tile is-3 is-parent">
+    <article class="tile is-child no-pad">
+      <%= link_to '#' do %>
+        <div class="image-bg" style="background-image: url(assets/zack.jpg);">
+          <div class="hero-text">
+            <p class="title">Zachary</p>
+            <p class="subtitle">Let's make our own love island in animal crossing</p>
+          </div>
+        </div>
+      <% end %>
+    </article>
+  </div>
+
+  <div class="tile is-3 is-parent">
+    <article class="tile is-child no-pad">
+      <%= link_to '#' do %>
+        <div class="image-bg" style="background-image: url(assets/katya.jpg);">
+          <div class="hero-text">
+            <p class="title">Katya</p>
+            <p class="subtitle">Yes i am woman</p>
+          </div>
+        </div>
+      <% end %>
+    </article>
+  </div>
+</div>
 </div>

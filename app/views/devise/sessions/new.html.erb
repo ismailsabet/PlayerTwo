@@ -2,6 +2,7 @@
   <div class="container">
     <div class="columns is-centered is-vcentered">
       <div class="box is-one-quarter has-text-centered">
+        <div class="form">
           <h2 class="is-size-2 title font-effect-anaglyph">log in</h2>
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
@@ -26,6 +27,7 @@
           <% end %>
           <br>
           <%= render "devise/shared/links" %>
+          </div>
       </div>
     </div>
   </div>
