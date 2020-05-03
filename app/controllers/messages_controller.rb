@@ -4,6 +4,7 @@ class MessagesController < ApplicationController
   end
 
   def browse
+    @matches = current_user.matches;
   end
 
 end

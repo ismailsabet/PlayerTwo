@@ -1,10 +1,30 @@
 <div clas="container">
   <div class="columns" id="convo">
-    <div class="column has-background-primary">
+    <div class="column has-background-white">
       <p class="title">
         Matches
       </p>
 
+
+      <% @matches.each do |match| %>
+
+      <div class="panel-block">
+        <figure class="media-left">
+          <p class="image is-64x64">
+            <% if match.images.attached? %>
+            <% match.images.each do |image| %>
+            <%= image_tag(match.user_avatar, class: "is-rounded") %>
+            <% end %>
+            <% end %>
+          </p>
+        </figure>
+        <div class="media-content">
+          <div class="content">
+            <p><%= match.firstname %> <%= match.lastname %></p>
+          </div>
+        </div>
+      </div>
+      <% end %>
     </div>
     <div class="column is-three-quarters has-background-white">
       <div class="has-text-centered" id="top-bar">
