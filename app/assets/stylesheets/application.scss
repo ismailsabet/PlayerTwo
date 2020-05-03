@@ -131,3 +131,39 @@ $body-background-color: $black;
 .help {
   font-weight: normal;
 }
+
+#convo {
+  width: 90%;
+  height: 86%;
+  position: absolute;
+  left: 6%;
+  padding-top: 30px;
+}
+
+#top-bar {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  margin-bottom: 30px;
+  //height: 7%;
+}
+
+#message-box {
+  height: 83%;
+  overflow-y: scroll;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+#message-input {
+ //position: absolute;
+ //top: 60;
+}
+
+.message-content {
+  background: #f2f2f2;
+  margin: 10px;
+  p {
+    padding: 10px;
+  }
+}
