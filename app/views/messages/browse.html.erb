@@ -11,10 +11,11 @@
       <div class="panel-block">
         <figure class="media-left">
           <p class="image is-64x64">
+            <%# Have to change this to use user_avatar method %>
             <% if match.images.attached? %>
-            <% match.images.each do |image| %>
             <%= image_tag(match.user_avatar, class: "is-rounded") %>
-            <% end %>
+            <% else %>
+            <%= image_tag('default_avatar.jpeg', class: "is-rounded") %>
             <% end %>
           </p>
         </figure>
