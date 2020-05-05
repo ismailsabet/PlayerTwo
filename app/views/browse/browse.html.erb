@@ -12,16 +12,14 @@
                 <p class="title is-4"><%= user.firstname %>
                   <%= user.lastname %></p>
                 <p class="subtitle is-6">
-                  nick
+                  <%= user.username %>
                 </p>
 
                 <div class="content">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+                  <%= user.bio %>
                   <ul class="user-details">
-                    <li>Studies:
-                    </li>
-                    <li>Location:
-                    </li>
+                    <li> <%= user.university %> (<%= user.course %>)</li>
+                    <li> <%= user.location.city %>, <%= user.location.country %></li>
                   </ul>
                 </div>
 
