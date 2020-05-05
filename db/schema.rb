@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_05_173511) do
+ActiveRecord::Schema.define(version: 2020_05_05_163705) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -43,11 +43,23 @@ ActiveRecord::Schema.define(version: 2020_04_05_173511) do
   end
 
   create_table "likes", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "liked_user_id"
+    t.integer "user_id", null: false
+    t.integer "liked_user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "address1", null: false
+    t.string "address2"
+    t.string "city", null: false
+    t.string "country", null: false
+    t.string "postcode"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_locations_on_user_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -66,10 +78,17 @@ ActiveRecord::Schema.define(version: 2020_04_05_173511) do
     t.string "username", default: "", null: false
     t.string "firstname", default: "", null: false
     t.string "lastname", default: "", null: false
+    t.text "bio", default: "", null: false
+    t.date "dob", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true

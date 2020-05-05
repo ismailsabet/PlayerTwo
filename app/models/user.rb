@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many_attached :images
+  has_one :location
 
   def matches
     liked_user_ids = Like.where(user_id: self.id).map(&:liked_user_id)
@@ -15,12 +16,4 @@ class User < ApplicationRecord
     User.where(id: matched_ids)
   end
 
-  def user_avatar user
-    if user.images.attached?
-      url_for(user.images.first)
-    else
-      # Assuming you have a default.jpg in your assets folder
-      'assets/default_avatar.jpeg'
-    end
-  end
 end
