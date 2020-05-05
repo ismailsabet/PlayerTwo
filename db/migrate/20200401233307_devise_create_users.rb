@@ -8,6 +8,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :username,           null: false, default: ""
       t.string :firstname,          null: false, default: ""
       t.string :lastname,           null: false, default: ""
+      t.string :university,           null: false, default: ""
+      t.string :course,           null: false, default: ""
       t.text :bio,                  null: false, default: ""
       t.date :dob,                  null: false
       t.string :encrypted_password, null: false, default: ""
