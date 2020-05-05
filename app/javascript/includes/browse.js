@@ -1,3 +1,5 @@
+// Functions for approving or declining a user in browse section
+
 $(function(){
 
   var $activeSlide = $('#slides .slide:first-child');

@@ -6,10 +6,6 @@ class BrowseController < ApplicationController
     @users = User.where.not(id: liked_user_ids)
   end
 
-  def matches
-    @matches = current_user.matches
-  end
-
   def approve
     #swipe right
     user_id = params[:id]
@@ -29,15 +25,6 @@ class BrowseController < ApplicationController
 
   def decline
     #swipe left
-  end
-
-  def open_conversation
-    id = params[:id]
-    @user = User.find(id)
-    likes = Like.where(user_id: current_user.id, liked_user_id: id)
-    @match = likes.first if likes.size > 0
-
-    puts @match.id
   end
 
 end
