@@ -1,0 +1,20 @@
+<div class="container">
+
+  <% @matches.each do |match|%>
+    <div class="tile is-ancestor" style="flex-wrap: wrap; padding-top: 30px;">
+      <div class="tile is-3 is-parent">
+        <article class="tile is-child no-pad">
+          <%= link_to '#' do %>
+            <div class="image-bg" style="background-image: url('<%= url_for match.images.first %>');">
+              <div class="hero-text">
+                <p class="title"><%= match.firstname %></p>
+                <p class="subtitle"><%= match.bio %></p>
+              </div>
+            </div>
+          <% end %>
+         </article>
+      </div>
+    </div>
+  <% end %>
+
+</div>

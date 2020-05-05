@@ -78,6 +78,8 @@ ActiveRecord::Schema.define(version: 2020_05_05_163705) do
     t.string "username", default: "", null: false
     t.string "firstname", default: "", null: false
     t.string "lastname", default: "", null: false
+    t.string "university", default: "", null: false
+    t.string "course", default: "", null: false
     t.text "bio", default: "", null: false
     t.date "dob", null: false
     t.string "encrypted_password", default: "", null: false
