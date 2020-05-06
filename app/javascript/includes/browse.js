@@ -18,6 +18,7 @@ $(function(){
   });
 
   $("#decline").on("click", function() {
+    console.log("made it here");
     goToSlide('decline');
   });
 

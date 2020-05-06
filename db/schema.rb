@@ -78,10 +78,10 @@ ActiveRecord::Schema.define(version: 2020_05_05_163705) do
     t.string "username", default: "", null: false
     t.string "firstname", default: "", null: false
     t.string "lastname", default: "", null: false
-    t.string "university", default: "", null: false
-    t.string "course", default: "", null: false
-    t.text "bio", default: "", null: false
-    t.date "dob", null: false
+    t.string "university", default: ""
+    t.string "course", default: ""
+    t.text "bio", default: ""
+    t.date "dob"
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"

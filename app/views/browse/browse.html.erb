@@ -21,20 +21,9 @@
                     <li> <%= user.university %> (<%= user.course %>)</li>
                     <li> <%= user.location.city %>, <%= user.location.country %></li>
                   </ul>
+                  <%= link_to "expand profile", show_user_path(id: user.id), class: "card-footer-item button is-info is-light" %>
                 </div>
-
               </div>
-              <footer class="card-footer">
-                <button class="card-footer-item button is-danger is-light" id="decline">
-                  nope
-                </button>
-                <%= link_to "expand profile", show_user_path(id: user.id), class: "card-footer-item button is-info is-light" %>
-
-
-                <button class="card-footer-item button is-success is-light" id="approve">
-                  yes
-                </button>
-              </footer>
             </div>
         </li>
         <% end %>
@@ -42,3 +31,16 @@
     </div>
   </div>
 </div>
+
+<!-- I need these buttons below the slides so browse can work -->
+
+<footer class="card-footer">
+  <button class="card-footer-item button is-danger is-light" id="decline">
+    nope
+  </button>
+
+
+  <button class="card-footer-item button is-success is-light" id="approve">
+    yes
+  </button>
+</footer>

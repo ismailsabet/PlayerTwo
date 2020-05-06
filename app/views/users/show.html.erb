@@ -5,9 +5,7 @@
                 <div class="box">
                     <div class="content has-text-centered">
                         <% if @user.images.attached? %>
-                        <% @user.images.each do |image| %>
-                        <%= image_tag(image, size: '250') %>
-                        <% end %>
+                          <%= image_tag asset_url @user.user_avatar, size: 250 %>
                         <% end %>
                         <h1 class="is-size-3"><%= @user.firstname %> <%= @user.lastname %></h1>
                         <p class="is-size-5">@<%= @user.username %></p>
@@ -21,7 +19,7 @@
                 <div class="box">
                     <div class="content has-text-centered">
                         <h1 class="is-size-2">Bio</h1>
-                        <p class="is-size-5">Biography</p>
+                        <p class="is-size-5"><%= @user.bio %></p>
                         <h1 class="is-size-2">Library</h1>
                         <p class="is-size-5">3 Most Played Games</p>
                         <p class="is-size-5">Most Recently Played</p>

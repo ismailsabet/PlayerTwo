@@ -11,7 +11,7 @@
 
         <% if resource.images.attached? %>
           <% resource.images.each do |image| %>
-            <%= image_tag image, width: "200px" %>
+            <%= image_tag asset_url resource.user_avatar, width: "50px" %>
           <% end %>
         <% end %>
         <div class="field is-horizontal">
