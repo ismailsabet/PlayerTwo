@@ -15,13 +15,12 @@ User.create([
   { firstname: 'Sarah', lastname: 'A', email: 'sarah@gmail.com', username: 'sarah', password: 'password', bio: 'Meeting new people!', dob: '1999-05-28', university: 'University of Surrey', course: 'Computer Science'},
   ])
 
-Like.create([
-  { user_id: 1, liked_user_id: 4},
-  { user_id: 4, liked_user_id: 1},
-  { user_id: 2, liked_user_id: 5},
-  { user_id: 5, liked_user_id: 2},
-  { user_id: 3, liked_user_id: 6},
-  { user_id: 6, liked_user_id: 3},
+Match.create([
+  { user_1: 1, user_2: 4, user_1_approves: 'true', user_2_approves: 'true'},
+  { user_1: 1, user_2: 5, user_1_approves: 'true', user_2_approves: 'true'},
+  { user_1: 1, user_2: 6, user_1_approves: 'true', user_2_approves: 'true'},
+  { user_1: 2, user_2: 5, user_1_approves: 'true', user_2_approves: 'true'},
+  { user_1: 3, user_2: 6, user_1_approves: 'true', user_2_approves: 'true'}
   ])
 
 Location.create([

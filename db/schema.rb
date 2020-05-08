@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_05_163705) do
+ActiveRecord::Schema.define(version: 2020_05_07_192834) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -42,14 +42,6 @@ ActiveRecord::Schema.define(version: 2020_05_05_163705) do
     t.index ["sender_id"], name: "index_conversations_on_sender_id"
   end
 
-  create_table "likes", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "liked_user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_likes_on_user_id"
-  end
-
   create_table "locations", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "address1", null: false
@@ -60,6 +52,16 @@ ActiveRecord::Schema.define(version: 2020_05_05_163705) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_locations_on_user_id"
+  end
+
+  create_table "matches", force: :cascade do |t|
+    t.integer "user_1", null: false
+    t.integer "user_2", null: false
+    t.boolean "user_1_approves"
+    t.boolean "user_2_approves"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_1"], name: "index_matches_on_user_1"
   end
 
   create_table "messages", force: :cascade do |t|

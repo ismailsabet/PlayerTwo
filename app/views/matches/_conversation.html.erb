@@ -1,0 +1,24 @@
+<div class="has-text-centered" id="top-bar">
+  <p class="title">
+    <%= @user.firstname %>
+  </p>
+</div>
+
+<div id="message-box">
+  <div id="conversation_messages"><%= render partial: "matches/messages" unless @conversation.new_record? %></div>
+</div>
+
+<%= form_with model: @conversation do |form| %>
+  <%= form.hidden_field :recipient_id, value: @user.id %>
+
+  <div class="control is-expanded">
+    <%= form.fields_for :messages, @message do |message_form| %>
+      <%= message_form.hidden_field :user_id, value: current_user.id %>
+      <%= message_form.text_field :body, placeholder: "Enter your message and press send", id: "message-input", class: "input is-rounded" %>
+    <% end %>
+
+    <div class="control">
+      <input type="submit" name="submit" value="Send" class="button is-primary is-rounded">
+    </div>
+  </div>
+<% end %>

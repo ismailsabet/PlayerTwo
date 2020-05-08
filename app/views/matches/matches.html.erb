@@ -1,20 +1,33 @@
-<div class="container">
+<div clas="container">
+  <div class="columns" id="convo">
+    <div class="column has-background-white">
+      <p class="title">
+        Matches
+      </p>
 
-  <% @matches.each do |match|%>
-    <div class="tile is-ancestor" style="flex-wrap: wrap; padding-top: 30px;">
-      <div class="tile is-3 is-parent">
-        <article class="tile is-child no-pad">
-          <%= link_to '#' do %>
-            <div class="image-bg" style="background-image: url('<%= match.user_avatar %>');">
-              <div class="hero-text">
-                <p class="title"><%= match.firstname %></p>
-                <p class="subtitle"><%= match.bio %></p>
-              </div>
-            </div>
-          <% end %>
-         </article>
+      <% @matches.each do |match| %>
+
+      <div class="panel-block match-tile" data-id="<%= match.id %>" >
+        <figure class="media-left">
+          <p class="image is-64x64">
+            <% if match.images.attached? %>
+            <%= image_tag(asset_url match.user_avatar, class: "is-rounded") %>
+            <% end %>
+          </p>
+        </figure>
+        <div class="media-content">
+          <div class="content">
+            <p><%= match.firstname %> <%= match.lastname %></p>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+
+    <!-- This will have content once a user presses on a match -->
+    <div class="column is-three-quarters has-background-white">
+      <div id="conversation">
       </div>
     </div>
-  <% end %>
-
+  </div>
 </div>

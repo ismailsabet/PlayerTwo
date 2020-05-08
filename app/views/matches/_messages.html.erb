@@ -1,0 +1,16 @@
+<% @messages.each do |message| %>
+  <% if message.persisted? %>
+    <% if message.user_id == current_user.id %>
+      <div class="message-content">
+        <p class="is-pulled-right message-content"><%= simple_format message.body %></p>
+      </div>
+    <% else %>
+      <div class="message-content">
+        <figure class="image is-64x64 is-pulled-left">
+          <img class="is-rounded" src="https://bulma.io/images/placeholders/64x64.png">
+        </figure>
+        <p class="is-pulled-left message-content"><%= simple_format message.body %></p>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>

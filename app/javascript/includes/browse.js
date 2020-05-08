@@ -1,28 +1,52 @@
-// Functions for approving or declining a user in browse section
-
 $(function(){
-
   var $activeSlide = $('#slides .slide:first-child');
-  $activeSlide.addClass("showing");
 
-  $(".match").on("click", function() {
-    var user_id = $(this).data("id");
-    console.log(user_id);
+  $(".match-tile").on("click", function(){
+    var account_id = $(this).data("id");
 
     $.ajax({
-      url: "/get/conversation/" + user_id,
+      url: "/get/conversation/"+account_id,
+      method: "post",
+      dataType: "script"
+    })
+  });
+
+  $(".profile-info").on("click", function(){
+    var $details = $(this).closest(".slide").find(".more-details");
+
+    $details.toggle();
+
+    // move controls down
+    $("#slide-controls").toggleClass("open");
+  });
+
+  $(".open-conversation").on("click", function(){
+    var account_id = $(this).data("id");
+
+    $.ajax({
+      url: "/get/conversation/"+account_id,
+      method: "post",
+      dataType: "script"
+    })
+  });
+
+  $("#close-conversation").on("click", function(){
+    $("#conversation").hide();
+  });
+
+  $("#decline").on("click", function(){
+    var user_id = $activeSlide.data("id");
+
+    $.ajax({
+      url: "/decline/" + user_id,
       method: "post",
       dataType: "ajax"
     });
 
-  });
-
-  $("#decline").on("click", function() {
-    console.log("made it here");
     goToSlide('decline');
   });
 
-  $("#approve").on("click", function() {
+  $("#approve").on("click", function(){
     var user_id = $activeSlide.data("id");
 
     console.log(user_id);
@@ -36,10 +60,11 @@ $(function(){
     goToSlide('approve');
   });
 
-  function goToSlide(action) {
+  function goToSlide(action){
     $activeSlide.removeClass("showing");
     $activeSlide = $activeSlide.next(".slide");
 
+    // send data to controller
     if(action == "approve"){
       console.log(action);
     } else {
@@ -48,5 +73,4 @@ $(function(){
 
     $activeSlide.addClass("showing");
   }
-
 });

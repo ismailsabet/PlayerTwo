@@ -1,9 +1,7 @@
 class BrowseController < ApplicationController
 
   def browse
-    liked_user_ids = Like.where(user_id: current_user.id).map(&:liked_user_id)
-    liked_user_ids << current_user.id
-    @users = User.where.not(id: liked_user_ids)
+    @users = Match.recommended_matches_for(current_user.id)
   end
 
   def approve

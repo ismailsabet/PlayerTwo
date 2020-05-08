@@ -1,16 +1,5 @@
 @import 'application';
 
-
-
-.match-tile {
-  width: 100%;
-  height: 100%;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-
 .hero-text {
   text-align: center;
   position: relative;
@@ -22,4 +11,8 @@
     color:white;
     text-shadow: 2px 2px 5px $primary;
   }
+}
+
+.match-tile {
+  cursor: pointer;
 }
