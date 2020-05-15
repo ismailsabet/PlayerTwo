@@ -7,22 +7,50 @@ class BrowseController < ApplicationController
   def approve
     #swipe right
     user_id = params[:id]
+    match = Match.between(user_id, current_user.id)
 
-    new_like = Like.new(liked_user_id: user_id)
-    new_like.user_id = current_user.id
+    if match.present?
+      match = match.first
 
-    if new_like.save
-      # check if user likes us back
-      existing_like = Like.where(user_id: user_id, liked_user_id: current_user.id).count
-      @they_like_us = existing_like > 0
+      if match.user_1 == current_user.id
+        match.user_1_approves = true
+      else
+        match.user_2_approves = true
+      end
     else
-      # return warning message
+      match = Match.new(user_1: current_user.id, user_2: user_id, user_1_approves: true)
+    end
+
+    if match.save
+      puts "saved"
+    else
+      puts "not saved"
     end
 
   end
 
   def decline
     #swipe left
+    user_id = params[:id]
+    match = Match.between(user_id, current_user.id)
+
+    if match.present?
+      match = match.first
+
+      if match.user_1 == current_user.id
+        match.user_1_approves = false
+      else
+        match.user_2_approves = false
+      end
+    else
+      match = Match.new(user_1: current_user.id, user_2: user_id, user_1_approves: false)
+    end
+
+    if match.save
+      puts "saved"
+    else
+      puts "not saved"
+    end
   end
 
 end
