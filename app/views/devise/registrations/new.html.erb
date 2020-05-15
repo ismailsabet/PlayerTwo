@@ -28,6 +28,9 @@
             </div>
           </div>
 
+          <div class="field">
+            <%= f.date_select :dob, {:order => [:day, :month, :year], :start_year => Date.today.year - 18, end_year: Date.today.year - 100} %>
+          </div>
 
 
           <div class="field">
