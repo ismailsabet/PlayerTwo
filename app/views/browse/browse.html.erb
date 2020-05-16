@@ -1,46 +1,54 @@
-<div class="container">
-  <div class="columns is-centered">
-    <div class="column is-one-third">
-      <ul id="slides">
-        <% @users.each_with_index do |user,i|%>
+<section class="section">
+  <div class="container">
+    <% if @users.count >= 1 %>
+    <div class="columns is-centered">
+      <div class="column is-one-third is-vcentered">
+        <button class="button is-danger is-outlined is-rounded" id="decline" style="width: 100px; height: 100px;">
+          <%= fa_icon "times 2x" %>
+        </button>
+      </div>
+      <div class="column is-one-third">
+        <ul id="slides">
+          <% @users.each_with_index do |user,i|%>
           <li class="slide <%= 'showing' if i==0 %>" data-id="<%= user.id %>">
             <div class="card">
               <div class="card-image">
-                  <div class="image-bg-bigger" style="background-image: url('<%= user.user_avatar %>');">
-              </div>
-              <div class="card-content">
-                <p class="title is-4"><%= user.firstname %>
-                  <%= user.lastname %></p>
-                <p class="subtitle is-6">
-                  <%= user.username %>
-                </p>
+                <div class="image-bg-bigger" style="background-image: url('<%= user.user_avatar %>');">
+                </div>
+                <div class="card-content">
+                  <p class="title is-4"><%= user.firstname %>
+                    <%= user.lastname %></p>
+                  <p class="subtitle is-6">
+                    <%= user.username %>
+                  </p>
 
-                <div class="content">
-                  <%= user.bio %>
-                  <ul class="user-details">
-                    <li> <%= user.university %> (<%= user.course %>)</li>
-                    <li> <%= user.location.city %>, <%= user.location.country %></li>
-                  </ul>
-                  <%= link_to "expand profile", show_user_path(id: user.id), class: "card-footer-item button is-info is-light" %>
+                  <div class="content">
+                    <%= user.bio %>
+                    <ul class="user-details">
+                      <li> <%= user.university %> (<%= user.course %>)</li>
+                    </ul>
+                    <%= link_to "expand profile", show_user_path(id: user.id), class: "card-footer-item button is-info is-light" %>
+                  </div>
                 </div>
               </div>
-            </div>
-        </li>
-        <% end %>
-      </ul>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="column is-one-third is-vcentered">
+        <button class="button is-success is-outlined is-rounded" id="approve" style="width: 100px; height: 100px">
+          <%= fa_icon "heart 2x" %>
+        </button>
+
+      </div>
     </div>
+    <% else %>
+    <div class="columns is-vcentered">
+      <div class="column has-text-centered">
+        <p class="is-size-2 has-text-white"> You have swiped through everyone.</p>
+      </div>
+    </div>
+    <% end %>
   </div>
-</div>
-
+</section>
 <!-- I need these buttons below the slides so browse can work -->
-
-<footer class="card-footer">
-  <button class="card-footer-item button is-danger is-light" id="decline">
-    nope
-  </button>
-
-
-  <button class="card-footer-item button is-success is-light" id="approve">
-    yes
-  </button>
-</footer>

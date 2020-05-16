@@ -22,6 +22,7 @@ $body-background-color: $black;
 
 //@import url('https://fonts.googleapis.com/css?family=Major+Mono+Display&effect=anaglyph|emboss&family=lato&display=swap');
 @import "bulma";
+@import "font-awesome";
 
 .brand-title {
   font-family: 'Major Mono Display';
@@ -68,6 +69,7 @@ $body-background-color: $black;
   //border: 8px ridge $primary;
   font-weight: bold;
   border-radius: 30px;
+
   //color:$link;
   .form {
     padding-left: 60px;
@@ -110,22 +112,16 @@ $body-background-color: $black;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-
-  -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)),  color-stop(0.9, rgba(0,0,0,0)));
-        mask-image: linear-gradient(360deg, rgba(0,0,0,0) 0%, rgba(117,117,117,1) 15%, rgba(255,255,255,1) 100%);
 }
 
 .image-bg-bigger {
   width: 435px;
   height: 300px;
-  border-radius: 15px;
 
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 
-  -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)),  color-stop(0.9, rgba(0,0,0,0)));
-        mask-image: linear-gradient(360deg, rgba(0,0,0,0) 0%, rgba(117,117,117,1) 15%, rgba(255,255,255,1) 100%);
 }
 
 .help {
@@ -156,13 +152,14 @@ $body-background-color: $black;
 }
 
 #message-input {
- //position: absolute;
- //top: 60;
+  //position: absolute;
+  //top: 60;
 }
 
 .message-content {
   background: #f2f2f2;
   margin: 10px;
+
   p {
     padding: 10px;
   }

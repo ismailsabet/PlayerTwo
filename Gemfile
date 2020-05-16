@@ -35,6 +35,9 @@ gem 'simple_form'
 # Bulma
 gem 'bulma-rails', '~> 0.8.0'
 
+# Font Awesome Icons
+gem 'font-awesome-rails'
+
 # ------------------FRONT END (end)-----------------------
 
 # Use Active Storage variant
