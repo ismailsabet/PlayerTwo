@@ -8,8 +8,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :username,           null: false, default: ""
       t.string :firstname,          null: false, default: ""
       t.string :lastname,           null: false, default: ""
-      t.string :university,         default: ""
-      t.string :course,             default: ""
       t.text :bio,                  default: ""
       t.date :dob
       t.string :encrypted_password, null: false, default: ""
@@ -25,8 +23,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.integer  :sign_in_count, default: 0, null: false
       t.datetime :current_sign_in_at
       t.datetime :last_sign_in_at
-      t.string   :current_sign_in_ip
-      t.string   :last_sign_in_ip
+      # t.string   :current_sign_in_ip
+      # t.string   :last_sign_in_ip
 
       ## Confirmable
       # t.string   :confirmation_token

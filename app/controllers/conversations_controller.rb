@@ -5,15 +5,21 @@ class ConversationsController < ApplicationController
     @conversation.sender_id = current_user.id
     @conversation.messages.first.user_id = current_user.id
 
-    if @conversation.save!
-      # logger.debug "conversation has been saved"
-    else
-      # logger.debug "unable to save conversation!!"
+    respond_to do |format|
+      format.js {
+        if @conversation.save!
+          @messages = @conversation.messages
+          render "matches/conversation_messages"
+        else
+          # logger.debug "unable to save conversation!!"
+        end
+      }
     end
   end
 
   def update
     @conversation = Conversation.find(params[:id])
+    @conversation.sender_id = current_user.id
 
     respond_to do |format|
       format.js {
@@ -21,7 +27,7 @@ class ConversationsController < ApplicationController
           @messages = @conversation.messages
           render "matches/conversation_messages"
         else
-
+          # logger.debug "unable to update conversation!!"
         end
       }
     end

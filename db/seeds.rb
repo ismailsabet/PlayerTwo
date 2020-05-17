@@ -7,18 +7,17 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create([
-  { firstname: 'Ismail', lastname: 'Sabet', email: 'ismail@gmail.com', username: 'ismail', password: 'password', bio: 'Meeting new people!', dob: '1999-05-28', university: 'University of Surrey', course: 'Computer Science'},
-  { firstname: 'Roger', lastname: 'Chen', email: 'roger@gmail.com', username: 'roger', password: 'password', bio: 'Meeting new people!', dob: '1999-05-28', university: 'University of Surrey', course: 'Computer Science'},
-  { firstname: 'Artur', lastname: 'Rybak', email: 'artur@gmail.com', username: 'artur', password: 'password', bio: 'Meeting new people!', dob: '1999-05-28', university: 'University of Surrey', course: 'Computer Science'},
-  { firstname: 'Zoe', lastname: 'P', email: 'zoe@gmail.com', username: 'zoe', password: 'password', bio: 'Meeting new people!', dob: '1999-05-28', university: 'University of Surrey', course: 'Computer Science'},
-  { firstname: 'Rachel', lastname: 'K', email: 'rachel@gmail.com', username: 'rachel', password: 'password', bio: 'Meeting new people!', dob: '1999-05-28', university: 'University of Surrey', course: 'Computer Science'},
-  { firstname: 'Sarah', lastname: 'A', email: 'sarah@gmail.com', username: 'sarah', password: 'password', bio: 'Meeting new people!', dob: '1999-05-28', university: 'University of Surrey', course: 'Computer Science'},
+  { firstname: 'Ismail', lastname: 'Sabet', email: 'ismail@gmail.com', username: 'ismail', password: 'password', bio: 'Meeting new people!', dob: '1999-05-28'},
+  { firstname: 'Roger', lastname: 'Chen', email: 'roger@gmail.com', username: 'roger', password: 'password', bio: 'Meeting new people!', dob: '1999-05-28'},
+  { firstname: 'Artur', lastname: 'Rybak', email: 'artur@gmail.com', username: 'artur', password: 'password', bio: 'Meeting new people!', dob: '1999-05-28'},
+  { firstname: 'Zoe', lastname: 'P', email: 'zoe@gmail.com', username: 'zoe', password: 'password', bio: 'Meeting new people!', dob: '1999-05-28'},
+  { firstname: 'Rachel', lastname: 'K', email: 'rachel@gmail.com', username: 'rachel', password: 'password', bio: 'Meeting new people!', dob: '1999-05-28'},
+  { firstname: 'Sarah', lastname: 'A', email: 'sarah@gmail.com', username: 'sarah', password: 'password', bio: 'Meeting new people!', dob: '1999-05-28'},
   ])
 
 Match.create([
   { user_1: 1, user_2: 4, user_1_approves: 'true', user_2_approves: 'true'},
   { user_1: 1, user_2: 5, user_1_approves: 'true', user_2_approves: 'true'},
-  { user_1: 1, user_2: 6, user_1_approves: 'true', user_2_approves: 'true'},
   { user_1: 2, user_2: 5, user_1_approves: 'true', user_2_approves: 'true'},
   { user_1: 3, user_2: 6, user_1_approves: 'true', user_2_approves: 'true'}
   ])
