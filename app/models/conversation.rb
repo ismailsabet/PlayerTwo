@@ -1,5 +1,7 @@
 class Conversation < ApplicationRecord
   has_many :messages, dependent: :destroy
+  has_one :latest_message, -> { limit(1).order(created_at: :desc) }, class_name: 'Message'
+
   accepts_nested_attributes_for :messages, allow_destroy: true
 
   validates_presence_of :sender_id, :recipient_id
