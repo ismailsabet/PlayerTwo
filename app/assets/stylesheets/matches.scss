@@ -6,13 +6,18 @@
   top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
+
   //color: white !important;
   p {
-    color:white;
+    color: white;
     text-shadow: 2px 2px 5px $primary;
   }
 }
 
 .match-tile {
   cursor: pointer;
+}
+
+#conversation {
+  height: 90%
 }

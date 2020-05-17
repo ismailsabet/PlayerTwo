@@ -7,11 +7,13 @@
 
       <% @matches.each do |match| %>
 
-      <div class="panel-block match-tile" data-id="<%= match.id %>" >
+      <div class="panel-block match-tile" data-id="<%= match.id %>">
         <figure class="media-left">
-          <p class="image is-64x64">
+          <p class="image is-64x64 is-square">
             <% if match.images.attached? %>
-            <%= image_tag(asset_url match.user_avatar, class: "is-rounded") %>
+            <%= image_tag((asset_url match.user_avatar), class: "is-rounded profile-picture") %>
+            <% else %>
+            <%= image_tag("default_avatar.jpeg", class: "is-rounded profile-picture") %>
             <% end %>
           </p>
         </figure>

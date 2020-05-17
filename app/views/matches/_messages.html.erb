@@ -1,16 +1,44 @@
 <% @messages.each do |message| %>
-  <% if message.persisted? %>
-    <% if message.user_id == current_user.id %>
-      <div class="message-content">
-        <p class="is-pulled-right message-content"><%= simple_format message.body %></p>
+<% if message.persisted? %>
+<% if message.user_id == current_user.id %>
+<div class="level is-mobile">
+  <div class="level-left"></div>
+  <div class="level-right">
+    <div class="level-item has-text-right">
+      <div class="tag is-medium is-rounded is-primary">
+        <%= simple_format message.body %>
       </div>
-    <% else %>
-      <div class="message-content">
-        <figure class="image is-64x64 is-pulled-left">
-          <img class="is-rounded" src="https://bulma.io/images/placeholders/64x64.png">
-        </figure>
-        <p class="is-pulled-left message-content"><%= simple_format message.body %></p>
+    </div>
+    <div class="level-right">
+      <p class="image is-32x32 is-square" style="padding: 8px">
+        <% if current_user.images.attached? %>
+        <%= image_tag((asset_url current_user.user_avatar), class: "is-rounded profile-picture") %>
+        <% else %>
+        <%= image_tag("default_avatar.jpeg", class: "is-rounded profile-picture") %>
+        <% end %>
+      </p>
+    </div>
+  </div>
+</div>
+<% else %>
+<div class="level is-mobile">
+  <div class="level-left">
+    <div class="level-item">
+      <p class="image is-32x32 is-square">
+        <% if message.user.images.attached? %>
+        <%= image_tag((asset_url message.user.user_avatar), class: "is-rounded profile-picture") %>
+        <% else %>
+        <%= image_tag("default_avatar.jpeg", class: "is-rounded profile-picture") %>
+        <% end %>
+      </p>
+    </div>
+    <div class="level-item">
+      <div class="tag is-medium is-rounded">
+        <%= simple_format message.body %>
       </div>
-    <% end %>
-  <% end %>
+    </div>
+  </div>
+</div>
+<% end %>
+<% end %>
 <% end %>

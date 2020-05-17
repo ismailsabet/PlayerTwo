@@ -15,7 +15,7 @@ class MatchesController < ApplicationController
     conversation = Conversation.between(id, current_user.id)
 
     @conversation = conversation.size > 0 ? conversation.first : Conversation.new
-    @messages = @conversation.messages.includes(user: :images_attachments) if @conversation.persisted?
+    @messages = @conversation.messages.includes(:user) if @conversation.persisted?
     @message = @conversation.messages.build
 
     if @user.present?

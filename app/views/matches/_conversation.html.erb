@@ -5,20 +5,31 @@
 </div>
 
 <div id="message-box">
-  <div id="conversation_messages"><%= render partial: "matches/messages" unless @conversation.new_record? %></div>
+  <div id="conversation_messages">
+    <%= render partial: "matches/messages" unless @conversation.new_record? %>
+  </div>
 </div>
 
 <%= form_with model: @conversation do |form| %>
-  <%= form.hidden_field :recipient_id, value: @user.id %>
+<%= form.hidden_field :recipient_id, value: @user.id %>
 
-  <div class="control is-expanded">
-    <%= form.fields_for :messages, @message do |message_form| %>
+<div class="control is-expanded">
+
+  <div class="level">
+    <div class="level-left"></div>
+    <div class="level-item">
+      <%= form.fields_for :messages, @message do |message_form| %>
       <%= message_form.hidden_field :user_id, value: current_user.id %>
       <%= message_form.text_field :body, placeholder: "Enter your message and press send", id: "message-input", class: "input is-rounded" %>
-    <% end %>
-
-    <div class="control">
-      <input type="submit" name="submit" value="Send" class="button is-primary is-rounded">
+      <% end %>
+    </div>
+    <div class="level-right">
+      <div class="level-item">
+        <div class="control">
+          <input type="submit" name="Submit" id="send" value="Send" class="button is-primary is-rounded is-mobile">
+        </div>
+      </div>
     </div>
   </div>
+</div>
 <% end %>
