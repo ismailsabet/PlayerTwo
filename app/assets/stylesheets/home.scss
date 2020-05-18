@@ -1,3 +1,30 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+#icon {
+    font-size: 40px;
+}
+
+#card-edit {
+    padding-top: 20px;
+    background: rgba(185, 213, 248, 0.2);
+    color: #DCDCDC;
+}
+
+#header-edit {
+    font-weight: normal;
+    font-size: 24px;
+    cursor: default;
+    color: #fc1df4;
+}
+
+#header-edit:hover {
+    color: #c403be;
+}
+
+#particles-js {
+    width: 100%;
+    height: 500px;
+    background: #333;
+}
