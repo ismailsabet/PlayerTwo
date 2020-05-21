@@ -27,4 +27,4 @@ test:
 
 production:
   <<: *default
-  database: player_two_production
+  database: <%= ENV['DATABASE_URL'] %>
