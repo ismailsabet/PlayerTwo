@@ -28,3 +28,11 @@
     height: 500px;
     background: #333;
 }
+
+.notification {
+    position: absolute;
+    z-index: 1;
+    margin-left: 10%;
+    width: 80%;
+    ;
+}

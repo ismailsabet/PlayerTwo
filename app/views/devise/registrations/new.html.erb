@@ -1,6 +1,6 @@
 <section class="section">
   <div class="container">
-    <div class="columns is-centered is-vcentered">
+    <div class="columns is-centered">
       <div class="box is-one-quarter has-text-centered has-text-link">
         <div class="form">
           <h2 class="is-size-2 title font-effect-anaglyph">sign up</h2>
@@ -28,6 +28,7 @@
             </div>
           </div>
 
+          <p>Birthday</p>
           <div class="field">
             <%= f.date_select :dob, {:order => [:day, :month, :year], :start_year => Date.today.year - 18, end_year: Date.today.year - 100} %>
           </div>
@@ -58,6 +59,11 @@
             <%= f.password_field :password_confirmation, placeholder: "Confirm Password", class: "input" %>
           </div>
 
+          <p><input type="checkbox" required name="cookies"> If you agree to our use of cookies, <br> please tick this
+            box
+            and continue.
+          </p>
+          <br>
           <div class="actions">
             <%= f.submit "Sign up", class:"button is-primary" %>
           </div>
