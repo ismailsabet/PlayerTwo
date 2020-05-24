@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :messages
   has_one :location
 
+  validates_presence_of :firstname, :lastname, :bio, :images
+
   def user_avatar
     if self.images.attached?
       #url_for (self.images.first)
