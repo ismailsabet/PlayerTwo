@@ -1,4 +1,5 @@
 class BrowseController < ApplicationController
+before_action :authenticate_user!
 
   def browse
     @users = Match.recommended_matches_for(current_user.id)

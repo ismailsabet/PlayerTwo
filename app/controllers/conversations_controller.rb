@@ -1,4 +1,5 @@
 class ConversationsController < ApplicationController
+  before_action :authenticate_user!
 
   def create
     @conversation = Conversation.new(conversation_params)

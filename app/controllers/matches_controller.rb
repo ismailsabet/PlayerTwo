@@ -1,4 +1,5 @@
 class MatchesController < ApplicationController
+  before_action :authenticate_user!
 
   def matches
     @matches = Match.matches_for(current_user.id)
