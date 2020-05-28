@@ -26,6 +26,18 @@ $(document).ready(function () {
         $(".navbar-menu").toggleClass("is-active");
 
     });
+
+    $("#privacy-policy-open").click(function () {
+
+        $("#privacy-policy").toggleClass("is-active");
+
+    });
+
+    $(".privacy-policy-close").click(function () {
+
+        $("#privacy-policy").toggleClass("is-active");
+
+    });
 });
 
 $(document).on('click', '.notification > button.delete', function () {

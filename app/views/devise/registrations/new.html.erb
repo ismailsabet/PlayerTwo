@@ -44,7 +44,10 @@
           </div>
 
           <div class="field">
-            <%= f.select :gender, options_for_select([["Gender", ""], "Male", "Female"]), :class => 'input' %>
+            <p> Gender </p>
+            <div class="select">
+              <%= f.select :gender, options_for_select(["Male", "Female"]), :class => 'input' %>
+            </div>
           </div>
 
           <div class="field">
@@ -63,9 +66,8 @@
             <%= f.password_field :password_confirmation, placeholder: "Confirm Password", class: "input" %>
           </div>
 
-          <p><input type="checkbox" required name="cookies"> If you agree to our use of cookies, <br> please tick this
-            box
-            and continue.
+          <p><input type="checkbox" required name="cookies"> If you agree to our <a id="privacy-policy-open"><u>privacy
+                policy</u></a>, <br> please tick this box and continue.
           </p>
           <br>
           <div class="actions">
@@ -77,6 +79,27 @@
           <%= render "devise/shared/links" %>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div id="privacy-policy" class="modal">
+    <div class="privacy-policy-close modal-background"></div>
+    <div class="card">
+      <section class="card-content has-text-centered">
+        <div class="content">
+          <p class="is-size-4 has-text-weight-bold">Privacy Policy</p>
+
+          <p>This card informs you of our policy regarding the collection and use of personal data.</p>
+          <p>PlayerTwo (from hereon referred to as "the service") uses your data to provide and improve your
+            experience
+            while using the service. By using the service, you agree to the collection and use of your information
+            in
+            accordance with our privacy policy.</p>
+          <button class="privacy-policy-close button is-rounded is-danger is-inverted">
+            <%= fa_icon "times 2x" %>
+          </button>
+        </div>
+      </section>
     </div>
   </div>
 </section>
