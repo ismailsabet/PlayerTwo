@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_one :location
 
   validates_presence_of :firstname, :lastname, :bio, :images
+  validate :validate_age
 
   def user_avatar
     if self.images.attached?
@@ -39,6 +40,14 @@ class User < ApplicationRecord
 
     return *quick_sort(left), pivot ,*quick_sort(right)
 
+  end
+
+  private
+
+  def validate_age
+      if dob.present? && dob > 18.years.ago.to_date
+          errors.add(:dob, 'You are under 18 years old.')
+      end
   end
 
 end
