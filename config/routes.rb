@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
+  resources :providers, only: :create do
+    resource :open_id, only: [:show, :create]
+  end
+
   resources "conversations" do
     resources "messages"
   end
@@ -17,4 +21,6 @@ Rails.application.routes.draw do
 
   get 'users/:id' => 'users#show', as: :show_user
   post "get/conversation/:id" => "matches#open_conversation", as: :open_conversation
+
+  post "/get/steam" => "sessions#get_steam"
 end

@@ -22,6 +22,10 @@ gem 'pg'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'steam-api', '~> 1.1'
+gem 'openid_connect'
+gem 'rack-ssl', :require => 'rack/ssl'
+
 gem 'devise'
 
 # ------------------FRONT END-----------------------

@@ -2,12 +2,21 @@ $(function () {
   var $activeSlide = $('#slides .slide:first-child');
 
   $(".match-tile").on("click", function () {
-    var account_id = $(this).data("id");
+    var user_id = $(this).data("id");
 
     $.ajax({
-      url: "/get/conversation/" + account_id,
+      url: "/get/conversation/" + user_id,
       method: "post",
       dataType: "script"
+    });
+  });
+
+  $("#login-steam").on("click", function() {
+
+    $.ajax({
+      url: "/get/steam",
+      method: "post",
+      dataType: "ajax"
     });
   });
 
@@ -29,8 +38,6 @@ $(function () {
 
   $("#approve").on("click", function () {
     var user_id = $activeSlide.data("id");
-
-    console.log(user_id);
 
     $.ajax({
       url: "/approve/" + user_id,
