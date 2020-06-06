@@ -163,3 +163,28 @@ $body-background-color: $black;
 .profile-picture {
   object-fit: cover;
 }
+
+#steam-window {
+  background-color: #fff;
+  position: relative;
+  border: 1px solid #dfe1e5;
+  box-shadow: 0 1px 15px rgba(27,31,35,.15) !important;
+  border-radius: 25px;
+  padding: 20px;
+  z-index: 2;
+  width: 50%;
+  margin: 20px auto;
+}
+
+#confirm-steam-account {
+  display: none;
+  background-color: #fff;
+  position: relative;
+  border: 1px solid #dfe1e5;
+  box-shadow: 0 1px 15px rgba(27,31,35,.15) !important;
+  border-radius: 25px;
+  padding: 20px;
+  z-index: 2;
+  width: 50%;
+  margin: 20px auto;
+}

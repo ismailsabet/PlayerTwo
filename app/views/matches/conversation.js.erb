@@ -1,3 +1,4 @@
+$("#initiate-conversation").hide();
 $("#conversation").html("<%= escape_javascript(render partial: 'matches/conversation') %>").show();
 
 $("#close-conversation").on("click", function(){

@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many_attached :images
   has_many :messages
   has_one :location
+  has_many :games
 
   validates_presence_of :firstname, :lastname, :bio, :images
   validate :validate_age

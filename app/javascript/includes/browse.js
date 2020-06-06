@@ -11,10 +11,6 @@ $(function () {
     });
   });
 
-  $("#close-conversation").on("click", function () {
-    $("#conversation").hide();
-  });
-
   $("#decline").on("click", function () {
     var user_id = $activeSlide.data("id");
 

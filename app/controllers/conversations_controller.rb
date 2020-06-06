@@ -12,7 +12,7 @@ class ConversationsController < ApplicationController
           @messages = @conversation.messages
           render "matches/conversation_messages"
         else
-          # logger.debug "unable to save conversation!!"
+          # logger.debug "unable to save"
         end
       }
     end
@@ -28,7 +28,7 @@ class ConversationsController < ApplicationController
           @messages = @conversation.messages
           render "matches/conversation_messages"
         else
-          # logger.debug "unable to update conversation!!"
+          # logger.debug "unable to update"
         end
       }
     end

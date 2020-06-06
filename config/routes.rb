@@ -17,4 +17,8 @@ Rails.application.routes.draw do
 
   get 'users/:id' => 'users#show', as: :show_user
   post "get/conversation/:id" => "matches#open_conversation", as: :open_conversation
+
+  get '/steam/connect' => 'users#steam_index'
+  post "/get/steamid" => "users#get_steamid"
+
 end

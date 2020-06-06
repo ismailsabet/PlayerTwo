@@ -1,0 +1,15 @@
+<div id="steam-window">
+  <p>Please Enter your vanity:</p>
+  <%= image_tag("steam_vanity.png") %>
+
+  <form action="/get/steamid" method="post">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <input type="text" name="vanity" value="">
+    <input type="submit" id="submit-vanity">
+  </form>
+</div>
+
+<div id="confirm-steam-account">
+
+  <p><%= @username %></p>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_07_192834) do
+ActiveRecord::Schema.define(version: 2020_06_05_220319) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,18 @@ ActiveRecord::Schema.define(version: 2020_05_07_192834) do
     t.index ["sender_id"], name: "index_conversations_on_sender_id"
   end
 
+  create_table "games", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "appid", null: false
+    t.string "name", null: false
+    t.bigint "playtime", null: false
+    t.boolean "recent", default: false
+    t.string "img_url", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_games_on_user_id"
+  end
+
   create_table "locations", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "address1", null: false
@@ -76,6 +88,38 @@ ActiveRecord::Schema.define(version: 2020_05_07_192834) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["conversation_id"], name: "index_messages_on_conversation_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "open_ids", force: :cascade do |t|
+    t.bigint "account_id"
+    t.bigint "provider_id"
+    t.string "identifier"
+    t.string "access_token", limit: 2048
+    t.string "id_token", limit: 2048
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["account_id"], name: "index_open_ids_on_account_id"
+    t.index ["provider_id"], name: "index_open_ids_on_provider_id"
+  end
+
+  create_table "providers", force: :cascade do |t|
+    t.bigint "account_id"
+    t.string "issuer"
+    t.string "jwks_uri"
+    t.string "name"
+    t.string "identifier"
+    t.string "secret"
+    t.string "scopes_supported"
+    t.string "host"
+    t.string "scheme"
+    t.string "authorization_endpoint"
+    t.string "token_endpoint"
+    t.string "userinfo_endpoint"
+    t.boolean "dynamic", default: false
+    t.datetime "expires_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["account_id"], name: "index_providers_on_account_id"
   end
 
   create_table "users", force: :cascade do |t|

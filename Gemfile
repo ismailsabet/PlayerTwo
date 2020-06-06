@@ -24,6 +24,8 @@ gem 'pg'
 
 gem 'devise'
 
+gem 'steam-api'
+
 # ------------------FRONT END-----------------------
 
 # Beautify Errors
