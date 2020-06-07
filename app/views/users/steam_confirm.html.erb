@@ -1,0 +1,9 @@
+<div id="steam-window">
+  <%= image_tag(@avatar) %>
+  <p> <%= @username %> </p>
+  <br>
+  <p>Is this you?</p>
+
+  <%= link_to "Cancel", steam_index_path %>
+  <%= link_to "Confirm", root_path, id: "confirm_steam_account" %>
+</div>

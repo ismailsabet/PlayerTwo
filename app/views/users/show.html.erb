@@ -23,10 +23,14 @@
                         <h1 class="is-size-2">Library</h1>
                         <p class="is-size-5">3 Most Played Games</p>
                         <% @most_played.each do |game| %>
+                          <% url = "http://media.steampowered.com/steamcommunity/public/images/apps/#{game.appid}/#{game.img_url}.jpg" %>
+                          <%= image_tag(url) %>
                           <%= game.name %>
                         <% end %>
                         <p class="is-size-5">Most Recently Played</p>
                         <% @recently_played.each do |game| %>
+                          <% url = "http://media.steampowered.com/steamcommunity/public/images/apps/#{game.appid}/#{game.img_url}.jpg" %>
+                          <%= image_tag(url) %>
                           <%= game.name %>
                         <% end %>
                     </div>

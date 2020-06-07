@@ -8,7 +8,7 @@ class Game < ApplicationRecord
   end
 
   scope :most_played, -> id do
-    Game.where(user_id: id).order(playtime: :desc).limit(5)
+    Game.where(user_id: id).order(playtime: :desc).limit(3)
   end
 
 end

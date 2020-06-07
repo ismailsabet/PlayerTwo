@@ -11,6 +11,15 @@ $(function () {
     });
   });
 
+  $("#confirm_steam_account").on("click", function() {
+
+    $.ajax({
+      url: "/add/steam/account",
+      method: "post",
+      dataType: "ajax"
+    });
+  });
+
   $("#decline").on("click", function () {
     var user_id = $activeSlide.data("id");
 

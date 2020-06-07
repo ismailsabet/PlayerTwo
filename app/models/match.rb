@@ -27,7 +27,7 @@ class Match < ApplicationRecord
       ignore_ids << new_id
     end
 
-    User.includes(:images_attachments).where.not(id: ignore_ids).order(id: :asc).limit(10)
+    User.includes(:images_attachments).where.not(id: ignore_ids).order(id: :asc)
   end
 
 end
