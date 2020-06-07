@@ -10,8 +10,7 @@
                         <h1 class="is-size-3"><%= @user.firstname %> <%= @user.lastname %></h1>
                         <p class="is-size-5">@<%= @user.username %></p>
                         <p class="is-size-6">Status: Offline <br>
-                            Age: <%= @age %> <br>
-                            Chemistry Rating: 83</p>
+                            Age: <%= @age %></p>
                     </div>
                 </div>
             </div>
@@ -22,16 +21,21 @@
                         <p class="is-size-5"><%= @user.bio %></p>
                         <h1 class="is-size-2">Library</h1>
                         <p class="is-size-5">3 Most Played Games</p>
-                        <% @most_played.each do |game| %>
-                          <% url = "http://media.steampowered.com/steamcommunity/public/images/apps/#{game.appid}/#{game.img_url}.jpg" %>
-                          <%= image_tag(url) %>
-                          <%= game.name %>
-                        <% end %>
+                        <div class="columns">
+                            <% @most_played.each do |game| %>
+                            <div class="column">
+                                <% url = "http://media.steampowered.com/steamcommunity/public/images/apps/#{game.appid}/#{game.img_url}.jpg" %>
+                                <%= image_tag(url) %>
+                                <br>
+                                <%= game.name %>
+                            </div>
+                            <% end %>
+                        </div>
                         <p class="is-size-5">Most Recently Played</p>
                         <% @recently_played.each do |game| %>
-                          <% url = "http://media.steampowered.com/steamcommunity/public/images/apps/#{game.appid}/#{game.img_url}.jpg" %>
-                          <%= image_tag(url) %>
-                          <%= game.name %>
+                        <% url = "http://media.steampowered.com/steamcommunity/public/images/apps/#{game.appid}/#{game.img_url}.jpg" %>
+                        <%= image_tag(url) %>
+                        <%= game.name %>
                         <% end %>
                     </div>
                 </div>

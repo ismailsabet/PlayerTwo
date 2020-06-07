@@ -1,9 +1,13 @@
 <div id="steam-window">
-  <%= image_tag(@avatar) %>
-  <p> <%= @username %> </p>
-  <br>
-  <p>Is this you?</p>
+  <div class="columns is-centered">
+    <div class="column has-text-centered">
+      <%= image_tag(@avatar) %>
+      <p><strong> <%= @username %> </strong></p>
+      <br>
+      <p>Is this you?</p>
 
-  <%= link_to "Cancel", steam_index_path %>
-  <%= link_to "Confirm", root_path, id: "confirm_steam_account" %>
+      <%= link_to "Cancel", steam_index_path %>
+      <%= link_to "Confirm", root_path, id: "confirm_steam_account" %>
+    </div>
+  </div>
 </div>
