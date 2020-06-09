@@ -1,12 +1,20 @@
-<div id="steam-window">
-  <p>Please Enter your vanity:</p>
-  <%= image_tag("steam_vanity.png") %>
+<div id="steam-window" class="is-centered">
+  <div class="columns is-centered">
+    <div class="column has-text-centered">
+      <p><strong>Please ensure that your Steam account has it's privacy settings set to "Public" before attempting to
+          connect.</strong></p>
+      <p>Please Enter your vanity:</p>
+      <%= image_tag("steam_vanity.png") %>
 
-  <form action="/get/steamid" method="post">
-    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-    <input type="text" name="vanity" value="">
-    <input type="submit" id="submit-vanity">
-  </form>
+      <form action="/get/steamid" method="post">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <input type="text" name="vanity" value="" class="input">
+        <br>
+        <input type="submit" id="submit-vanity" class="button is-rounded is-primary">
+      </form>
+    </div>
+  </div>
+
 </div>
 
 <div id="confirm-steam-account">
