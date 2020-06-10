@@ -66,6 +66,13 @@
             </div>
           </div>
 
+          <p> Gender </p>
+          <div class="field">
+            <div class="select">
+              <%=f.select :gender, options_for_select(["Male","Female"]), :class => 'input'%>
+            </div>
+          </div>
+
           <p class="is-size-4">Account Details</p>
 
           <div class="field is-horizontal">
