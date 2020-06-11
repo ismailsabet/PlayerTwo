@@ -1,4 +1,9 @@
 <div id="steam-window" class="is-centered">
+  <% flash.each do |type, msg| %>
+    <div>
+      <%= msg %>
+    </div>
+  <% end %>
   <div class="columns is-centered">
     <div class="column has-text-centered">
       <p><strong>Please ensure that your Steam account has it's privacy settings set to "Public" before attempting to
