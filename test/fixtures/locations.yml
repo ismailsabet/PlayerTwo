@@ -10,4 +10,6 @@ one:
   city: 'Guildford'
   country: 'UK'
   postcode: 'GU2'
+  created_at: '19-11-2009'
+  updated_at: '20-11-2009'
 # column: value

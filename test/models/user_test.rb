@@ -23,7 +23,10 @@ class UserTest < ActiveSupport::TestCase
     user.password = 'password'
     user.bio = 'Meeting new people!'
     user.dob = '1999-05-28'
-    assert true
+    user.encrypted_password = "Test123"
+    user.gender = 'Male'
+    user.sign_in_count = 1
+    assert user.valid?
   end
 end
 
