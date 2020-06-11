@@ -15,18 +15,30 @@ class UsersController < ApplicationController
 
     Steam.apikey = 'AD695F812D4F6784FAB5C7D81851B92C'
 
+    require 'uri'
+    require 'net/http'
+    require 'json'
+    keyword = params[:search]
+
     vanity = params[:vanity]
     steamid = Steam::User.vanity_to_steamid(vanity)
+    apikey = 'AD695F812D4F6784FAB5C7D81851B92C'
 
     respond_to do |format|
       if steamid.nil?
         format.html { render :steam_index, notice: "Vanity not valid" }
       else
         session[:steamid] = steamid
-        summary = Steam::User.summary(steamid)
+        summary = URI("http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=#{apikey}&steamids=#{steamid}")
 
-        @username = summary['personaname']
-        @avatar = summary['avatarfull']
+        response = Net::HTTP.get(summary)
+        result = JSON.parse(response)
+
+        result['response']['players'].each do |child|
+          @username = child['personaname']
+          @avatar = child['avatarfull']
+        end
+
         format.html { render :steam_confirm }
       end
     end
